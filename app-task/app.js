@@ -31,8 +31,8 @@ const PintarDB = () =>{
                 <i class="fas fa-angle-double-right mr-2"></i>
                 <b>${element.actividad}</b> -  ${element.estado} 
                 <span class="float-right">
-                    <i class="fas fa-check mr-2"></i>
-                    <i class="fas fa-trash"></i>
+                    <i class="fas fa-check mr-2"  style="font-size: 25px;"></i>
+                    <i class="fas fa-trash"  style="font-size: 25px;"></i>
                 </span>
                 </div>
                 `   
@@ -42,8 +42,8 @@ const PintarDB = () =>{
                 <i class="fas fa-angle-double-right mr-2"></i>
                 <b>${element.actividad}</b> -  ${element.estado} 
                 <span class="float-right">
-                    <i class="fas fa-check mr-2"></i>
-                    <i class="fas fa-trash"></i>
+                    <i class="fas fa-check mr-5"  style="font-size: 25px;"></i>
+                    <i class="fas fa-trash"  style="font-size: 25px;"></i>
                 </span>
                 </div>
                 `  
