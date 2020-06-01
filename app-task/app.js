@@ -31,7 +31,7 @@ const PintarDB = () =>{
                 <b></i>${element.actividad}</b> Estado - ${element.estado} 
                 <span class="">
                     <button type="button" class="btn btn-outline-success"><i class="fas fa-check"></i></button>
-                    <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash"></i></i></button>   
+                    <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>   
                 </span>
             </div>
                 `   
@@ -40,8 +40,8 @@ const PintarDB = () =>{
                 <div class="alert alert-danger d-flex justify-content-between d-flex align-items-center" role="alert">
                     <b>${element.actividad}</b> Estado - ${element.estado} 
                     <span class="">
-                        <button type="button" class="btn btn-outline-success">Edit</button>
-                        <button type="button" class="btn btn-outline-danger">Delet</i></button>   
+                        <button type="button" class="btn btn-outline-success"><i class="fas fa-check"></i></button>
+                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>   
                     </span>
                 </div>
                 `  
@@ -94,12 +94,12 @@ listaactividades.addEventListener('click', (e) => {
     const clase = e.path[0].classList[1];
     //console.log(e);
     
-    if(clase === "btn-outline-success" || clase === "btn-outline-danger"){
+    if(clase === "fa-check" || clase === "fa-trash"){
         //console.log(e.path[3].childNodes[1].innerHTML);
-        if (clase === "btn-outline-success") {
-            //EdiarDB(e.path[3].childNodes[1].innerHTML);
+        if (clase === "fa-check") {
+            EdiarDB(e.path[3].childNodes[1].innerHTML);
             //console.log(e.path[3].childNodes[1].innerHTML)
-            alert('funcionado..')
+            //alert('funcionado..')
         }
         if (clase === "fa-trash") {
            EliminarDB(e.path[3].childNodes[1].innerHTML);
