@@ -1,3 +1,4 @@
+  
 // variables globales
 const formularioUI = document.querySelector('#formulario');
 const listaactividades = document.querySelector('#actividades');
@@ -30,8 +31,9 @@ const PintarDB = () =>{
             <div class="alert alert-success d-flex justify-content-between d-flex align-items-center" role="alert">
                 <b></i>${element.actividad}</b> Estado - ${element.estado} 
                 <span class="">
-                    <button type="button" class="btn btn-outline-success"><i class="fas fa-check"></i></button>
-                    <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>   
+                    <a class="btn btn-outline-success edit">Edit</a>
+                    <a class="btn btn-outline-success delete">Delete</a>
+                       
                 </span>
             </div>
                 `   
@@ -40,8 +42,9 @@ const PintarDB = () =>{
                 <div class="alert alert-danger d-flex justify-content-between d-flex align-items-center" role="alert">
                     <b>${element.actividad}</b> Estado - ${element.estado} 
                     <span class="">
-                        <button type="button" class="btn btn-outline-success"><i class="fas fa-check"></i></button>
-                        <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>   
+                    <a class="btn btn-outline-success edit">Edit</a>
+                    <a class="btn btn-outline-success delete">Delete</a>
+                          
                     </span>
                 </div>
                 `  
@@ -91,18 +94,19 @@ listaactividades.addEventListener('click', (e) => {
    
    
 
-    const clase = e.path[0].classList[1];
+    const clase = e.path[0].classList[2];
     //console.log(e);
     
-    if(clase === "fa-check" || clase === "fa-trash"){
+    if(clase === "edit" || clase === "delete"){
         //console.log(e.path[3].childNodes[1].innerHTML);
-        if (clase === "fa-check") {
-            EdiarDB(e.path[3].childNodes[1].innerHTML);
-            //console.log(e.path[3].childNodes[1].innerHTML)
-            //alert('funcionado..')
+        if (clase === "edit") {
+            EdiarDB(e.path[2].childNodes[1].innerHTML);
+            //console.log(e.path[2].childNodes[1].innerHTML)
+           //console.log(e);
         }
-        if (clase === "fa-trash") {
-           EliminarDB(e.path[3].childNodes[1].innerHTML);
+        if (clase === "delete") {
+          EliminarDB(e.path[2].childNodes[1].innerHTML);
+           //console.log(e.path[2].childNodes[1].innerHTML)
         }
     }
 })
