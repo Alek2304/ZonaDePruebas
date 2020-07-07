@@ -1,0 +1,12 @@
+.form{
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+input[type ="text"],select{
+    margin-bottom: 10px;
+}
+.table{
+    width: 80%;
+    margin: auto;
+}
