@@ -23,12 +23,7 @@
 </head>
 
 <body>
-  <div class="boton">
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cliente">Cliente</button>
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Producto</button>
-    <button type="button" class="btn btn-success" id="btnimprimir">Imprimir</button>
 
-  </div>
   <div class="contenedor" id="contenido">
     <div class="barra">
       <div class="logo">
@@ -38,7 +33,7 @@
         <h1>Pedidos</h1>
       </div>
     </div>
-    <form class="formulario">
+    <form class="formulario" id="formulario">
       <label for="" class="Datos">Datos Cliente</label>
       <div class="form-group row">
         <label for="Nombre" class="col-sm-2 col-form-label">Nombres</label>
@@ -70,9 +65,14 @@
 
         </div>
       </div>
-      <label for="" class="Datos">Datos Pedido</label>
-    </form>
 
+    </form>
+    <div class="boton">
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cliente">Cliente</button>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Producto</button>
+      <button type="button" class="btn btn-success" id="btnimprimir">Imprimir</button>
+  
+    </div>
 
     <table class="table" id="table">
       <thead class="thead-dark">
@@ -136,6 +136,76 @@
       </div>
     </div>
 
+    <div class="pie">
+        <div class="card-header">
+          Formas de pago
+        </div>
+        <div class="card-pagos">
+          <div class="cajas">
+            <div class="card-header encabezado">
+              <div>Contra Entrega</div>
+              <div>
+                <button class="btn btn-primary" onclick="OcultarElementos('subcaja1','block')">+</button>
+                <button class="btn btn-danger" onclick="OcultarElementos('subcaja1','none')">-</button>
+              </div>
+            </div>
+            <div class="subcaja" id="subcaja1" style="display:none">
+              <li class="list-group-item">
+                Monto
+                <input type="number" class="form-control">
+              </li>
+            </div>
+
+            
+          </div>
+
+          <div class="cajas">
+            <div class="card-header encabezado">
+              
+              <div>Deposito Bancario</div>
+              <div>
+                <button class="btn btn-primary" onclick="OcultarElementos('subcaja2','block')">+</button>
+                <button class="btn btn-danger" onclick="OcultarElementos('subcaja2','none')">-</button>
+              </div>  
+            </div>
+            <div class="subcaja" id="subcaja2" style="display:none">
+              <li class="list-group-item">
+                Monto
+                <input type="number" class="form-control">
+                Referencia
+                <input type="text" class="form-control">
+              </li>
+            </div>
+            
+          </div>
+
+          <div class="cajas">
+            <div class="card-header encabezado">
+              
+              <div>Tarjeta credito/debito</div>
+              <div>
+                <button class="btn btn-primary" onclick="OcultarElementos('subcaja3','block')">+</button>
+                <button class="btn btn-danger" onclick="OcultarElementos('subcaja3','none')">-</button>
+              </div>  
+            </div>
+            <div class="subcaja" id="subcaja3" style="display:none">
+              <li class="list-group-item">
+                <h1>Visa</h1>
+                Monto
+                <input type="number" class="form-control">
+                Referencia
+                <input type="text" class="form-control">
+                <h1>Credomatic</h1>
+                Monto
+                <input type="number" class="form-control">
+                Referencia
+                <input type="text" class="form-control">
+              </li>
+            </div>
+            
+          </div>
+        </div>   
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="cliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -4,21 +4,27 @@
     box-sizing: border-box;
 }
 
+.contenedor{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
 .logo{
     width: 120px;
     height: 100%;
-    margin-left: 60px;
+    margin-left: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .logo img{
     width: 120px;
-    height: 100px;
+    height: 90px;
 }
 .barra{
     width: 100%;
-    height: 150px;
+    height: 100px;
     display: flex;
     
 }
@@ -37,23 +43,26 @@
 
 }
 .formulario{
-    width: 90%;
+   /* width: 90%;
     margin: auto;
-    margin-top: 50px;
+    */
+    margin-top: 20px;
 }
 .Datos{
     font-size: 20px;
     margin-bottom: 20px;
 }
 .table{
-    width: 90%;
+    /*width: 90%;
     margin: auto;
+    */
     margin-top: 50px;
 }
 .boton{
-    width: 90%;
+   /* width: 90%;
+   margin: auto;
+   */
     height: 40px;
-    margin: auto;
     display: flex;
     justify-content: flex-end;
 }
@@ -63,4 +72,37 @@
     text-align: center;
     padding: 0;
     margin: 5px 10px;
+}
+.pie{
+    /*//  width: 90%;
+    margin: auto;
+    */
+    margin-top: 30px;
+    
+}
+.card-pagos{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+
+}
+.cajas{
+    width: 100%;
+    margin-right: 50px;
+}
+.encabezado{
+    display: flex;
+    justify-content: space-between;
+}
+.card-header{
+    
+}
+
+@media (max-width: 600px) {
+   .card-pagos{
+       display: block;
+   }
+   .card-header{
+       
+   }
 }

@@ -86,3 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("dato4").innerHTML += '<label>' + nuevo_Cliente.direccion + '</label>' 
     document.getElementById("dato5").innerHTML += '<label>' + nuevo_Cliente.telefono + '</label>' 
   };
+
+
+  function OcultarElementos(e,f) {
+    document.getElementById(e).style.display=f;
+  }
+
+
