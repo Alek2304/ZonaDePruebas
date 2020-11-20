@@ -59,20 +59,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function Datos() {
-    function Cliente(nombre, apellido, dpi, direccion,telefono) {
+    function Cliente(nombre, dpi, direccion,telefono) {
       this.nombre = nombre;
-      this.apellido = apellido;
       this.dpi = dpi;
       this.direccion = direccion;
       this.telefono = telefono;
     }
     var nombre = document.getElementById("Nombre").value;
-    var apellido = document.getElementById("Apellido").value;
     var dpi = document.getElementById("Dpi").value;
     var direccion = document.getElementById("Direccion").value;
     var telefono = document.getElementById("Telefono").value;
 
-    nuevo_Cliente = new Cliente(nombre,apellido,dpi,direccion,telefono);
+    nuevo_Cliente = new Cliente(nombre,dpi,direccion,telefono);
 
 
     agregarcliente();
@@ -81,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function agregarcliente() {
     baseDatos.push(nuevo_Cliente);
     document.getElementById("dato1").innerHTML += '<label id="name">' + nuevo_Cliente.nombre + '</label>' 
-    document.getElementById("dato2").innerHTML += '<label>' + nuevo_Cliente.apellido + '</label>' 
     document.getElementById("dato3").innerHTML += '<label>' + nuevo_Cliente.dpi + '</label>' 
     document.getElementById("dato4").innerHTML += '<label>' + nuevo_Cliente.direccion + '</label>' 
     document.getElementById("dato5").innerHTML += '<label>' + nuevo_Cliente.telefono + '</label>' 
@@ -93,3 +90,87 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  function Contra_entrega() {
+    function data(monto) {
+      this.Monto = monto;
+    }
+
+    var Monto = document.getElementById("monto_contra_entrega").value;
+    console.log(Monto);
+    if (Monto.length == 0 ) {
+      Monto = "0.00"
+    }
+    function numberWithCommas(x) {
+      x = x.toString();
+      var pattern = /(-?\d+)(\d{3})/;
+      while (pattern.test(x))
+          x = x.replace(pattern, "$1,$2");
+      return x;
+  }
+  let valor = numberWithCommas(Monto);
+
+    nuevo_Monto = new data(valor);
+
+    console.log(nuevo_Monto);
+    agregarmonto();
+  };
+  //var baseDatos = [];
+
+  function agregarmonto() {
+   // baseDatos.push(nuevo_Monto);
+    document.getElementById("subcaja1").innerHTML += `<li class="list-group-item">
+                                                        <div class="alert alert-success" role="alert">
+                                                          <h1>Q ${nuevo_Monto.Monto}</h1>
+                                                        </div>
+                                                        
+                                                      </li>`
+  }
+
+
+  function Deposito_bancario() {
+    function data(monto,referencia,banco) {
+      this.Monto = monto;
+      this.Referencia = referencia;
+      this.Banco = banco;
+    }
+
+    var Banco = document.getElementById("banco").value;
+    var Referencia = document.getElementById("referencia").value;
+    var Monto = document.getElementById("monto").value;
+
+    if (Monto.length == 0 || Referencia.length == 0 || Banco.length == 0)  {
+      alert("Es obligatorio Llenar Todos los Campos");
+    }else{
+      function numberWithCommas(x) {
+        x = x.toString();
+        var pattern = /(-?\d+)(\d{3})/;
+        while (pattern.test(x))
+            x = x.replace(pattern, "$1,$2");
+        return x;
+    }
+    let valor = numberWithCommas(Monto);
+  
+      nuevo_Monto = new data(valor,Referencia,Banco);
+      console.log(nuevo_Monto);
+      agregarmonto();
+    };
+    //var baseDatos = [];
+    function agregarmonto() {
+     // baseDatos.push(nuevo_Monto);
+      document.getElementById("subcaja2").innerHTML += `<li class="list-group-item alert alert-success">
+                                                          <div class="data">
+                                                          <h4>Banco</h4>
+                                                          <h4>${nuevo_Monto.Banco}</h4>
+                                                          </div>
+                                                          <div class="data"> 
+                                                          <h4>Referencia:<h4>
+                                                          <h4>${nuevo_Monto.Referencia}</h4>
+                                                          </div>
+                                                          <div class="data">
+                                                          <h4>Monto</h4>
+                                                          <h1>Q${nuevo_Monto.Monto}</h1>
+                                                          </div>
+                                                        </li>`
+    }
+    }
+ 

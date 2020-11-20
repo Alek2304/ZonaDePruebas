@@ -20,56 +20,78 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-
-  <div class="contenedor" id="contenido">
-    <div class="barra">
-      <div class="logo">
-        <img src="logo JPG.jpg" alt="">
-      </div>
-      <div class="titulo">
-        <h1>Pedidos</h1>
-      </div>
+  
+  <div class="barra">
+    <div class="logo">
+      <img src="logo JPG.jpg" alt="">
     </div>
-    <form class="formulario" id="formulario">
-      <label for="" class="Datos">Datos Cliente</label>
-      <div class="form-group row">
-        <label for="Nombre" class="col-sm-2 col-form-label">Nombres</label>
-        <div class="col-sm-10" id="dato1">
-
+    <div class="titulo">
+      
+    </div>
+  </div>
+  <div class="contenedor" id="contenido">
+    <div class="informacion">
+      <form class="formulario" id="formulario">
+        <label for="" class="Datos">Datos Cliente</label>
+        <div class="form-group row">
+          <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10" id="dato1">
+  
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Apellidos</label>
-        <div class="col-sm-10" id="dato2">
-
+        
+        <div class="form-group row ">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">DPI</label>
+          <div class="col-sm-10" id="dato3">
+  
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">DPI</label>
-        <div class="col-sm-10" id="dato3">
-
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Direcion</label>
+          <div class="col-sm-10" id="dato4">
+  
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Direcion</label>
-        <div class="col-sm-10" id="dato4">
-
+        <div class="form-group row ">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Telefonos</label>
+          <div class="col-sm-10" id="dato5">
+  
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Telefonos</label>
-        <div class="col-sm-10" id="dato5">
-
+  
+      </form>
+      <form class="formulario2" id="formFacturacion">
+        <label for="" class="Datos">Datos de Facturacion</label>
+        <div class="form-group row">
+          <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10" id="dato1">
+  
+          </div>
         </div>
-      </div>
-
-    </form>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Direccion</label>
+          <div class="col-sm-10" id="dato2">
+  
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">NIT</label>
+          <div class="col-sm-10" id="dato3">
+  
+          </div>
+        </div>
+       
+  
+      </form>
+    </div>
+    
     <div class="boton">
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cliente">Cliente</button>
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Producto</button>
+      <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#cliente">Cliente</button>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#producto">Producto</button>
       <button type="button" class="btn btn-success" id="btnimprimir">Imprimir</button>
   
     </div>
@@ -89,7 +111,7 @@
     </table>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="producto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -129,8 +151,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
-            <button type="button" class="btn btn-primary" onclick="capturar()">Agregar</button>
+            <button type="button" class="btn btn-primary" onclick="capturar()" data-dismiss="modal" >Agregar</button>
           </div>
         </div>
       </div>
@@ -145,17 +166,12 @@
             <div class="card-header encabezado">
               <div>Contra Entrega</div>
               <div>
-                <button class="btn btn-primary" onclick="OcultarElementos('subcaja1','block')">+</button>
-                <button class="btn btn-danger" onclick="OcultarElementos('subcaja1','none')">-</button>
+                <button class="btn btn-primary"data-toggle="modal" data-target="#contra-entrega" >+</button>
               </div>
             </div>
-            <div class="subcaja" id="subcaja1" style="display:none">
-              <li class="list-group-item">
-                Monto
-                <input type="number" class="form-control">
-              </li>
-            </div>
+            <div class="subcaja" id="subcaja1">
 
+            </div>
             
           </div>
 
@@ -164,17 +180,13 @@
               
               <div>Deposito Bancario</div>
               <div>
-                <button class="btn btn-primary" onclick="OcultarElementos('subcaja2','block')">+</button>
-                <button class="btn btn-danger" onclick="OcultarElementos('subcaja2','none')">-</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#Deposito_bancario">+</button>
               </div>  
             </div>
-            <div class="subcaja" id="subcaja2" style="display:none">
-              <li class="list-group-item">
-                Monto
-                <input type="number" class="form-control">
-                Referencia
-                <input type="text" class="form-control">
-              </li>
+            <div class="subcaja" id="subcaja2" >
+              
+
+
             </div>
             
           </div>
@@ -185,7 +197,6 @@
               <div>Tarjeta credito/debito</div>
               <div>
                 <button class="btn btn-primary" onclick="OcultarElementos('subcaja3','block')">+</button>
-                <button class="btn btn-danger" onclick="OcultarElementos('subcaja3','none')">-</button>
               </div>  
             </div>
             <div class="subcaja" id="subcaja3" style="display:none">
@@ -226,12 +237,7 @@
                   <input type="text" class="form-control" id="Nombre">
                 </div>
               </div>
-              <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Apellido</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="Apellido">
-                </div>
-              </div>
+              
               <div class="form-group row">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">DPI</label>
                 <div class="col-sm-10">
@@ -253,14 +259,95 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
-            <button type="button" class="btn btn-primary" onclick="Datos()">Agregar</button>
+            <button type="button" class="btn btn-primary" onclick="Datos()" data-dismiss="modal">Siguiente</button>
           </div>
         </div>
       </div>
     </div>
 
   </div>
+
+
+
+
+  <!-----MODALES FORMAS DE PAGO -->
+
+  <div class="modal fade" id="contra-entrega" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="">Contra Entrega</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+
+            <div class="form-group row">
+              <label for="Nombre" class="col-sm-2 col-form-label">Monto</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="monto_contra_entrega">
+              </div>
+            </div>
+            
+            
+            
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"data-dismiss="modal" onclick="Contra_entrega()">Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="Deposito_bancario" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="">Deposito Bancario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+
+            <div class="form-group row">
+              <label for="Nombre" class="col-sm-2 col-form-label">Banco</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="banco">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="Nombre" class="col-sm-2 col-form-label">Referencia</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="referencia">
+              </div>
+            </div>
+
+            
+            <div class="form-group row">
+              <label for="Nombre" class="col-sm-2 col-form-label">Monto</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="monto">
+              </div>
+            </div>
+            
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"data-dismiss="modal" onclick="Deposito_bancario()">Siguiente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script>
     /*
