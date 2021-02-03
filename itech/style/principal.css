@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.barra{
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    box-shadow: 5px -10px 20px 1px rgb(255, 255, 255);
+    display: flex;
+    background-color: #00112d;
+    z-index: 100;
+}
+.logo{
+    width: 80%;
+    height: 120px;
+    overflow: hidden;
+}
+.logo img{
+    width: 150px;
+    height: 120px;
+    margin-left: 80px;
+}
+.texto{
+    font-family: 'Montserrat', sans-serif;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.texto h1{
+    font-size: 20px;
+    color: white;
+}
+.texto img{
+    width: 30px;
+    height: 50px;
+   
+}
+
+.presentacion{
+    margin-top: 120px;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.presentacion img{
+    width: 100%;
+    margin-top: 50px;
+}
+.Catalogos{
+    width: 90%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.folder{
+    width: 33.4%;
+    height: 400px;
+    background-color: white;
+    margin: 0 10px;
+}
+.folder img{
+    width: 100%;
+    height: 100%;
+}
+.pie{
+    background: #00112d;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pie p{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid white;
+    color: white;
+}
